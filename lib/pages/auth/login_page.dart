@@ -101,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 16),
               Text.rich(TextSpan(
-                  text: "Don't have an account?",
+                  text: "Don't have an account? ",
                   style: const TextStyle(color: Colors.black, fontSize: 14),
                   children: <TextSpan>[
                     TextSpan(
@@ -120,6 +120,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ));
   }
-}
 
-login() {}
+  login() {}
+}
