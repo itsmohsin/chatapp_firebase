@@ -92,7 +92,12 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              nextScreen(context, const ProfilePage());
+              nextScreenReplace(
+                  context,
+                  ProfilePage(
+                    userName: userName,
+                    email: email,
+                  ));
             },
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -118,6 +123,7 @@ class _HomePageState extends State<HomePage> {
                         IconButton(
                           onPressed: () async {
                             await authService.signOut();
+                            // ignore: use_build_context_synchronously
                             Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                     builder: (context) => const LoginPage()),
