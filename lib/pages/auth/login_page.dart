@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             : SingleChildScrollView(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Form(
                     key: formKey,
                     child: Column(
@@ -61,10 +61,8 @@ class _LoginPageState extends State<LoginPage> {
                           onChanged: (val) {
                             setState(() {
                               email = val;
-                              print(val);
                             });
                           },
-
                           // Check the validation status
                           validator: (val) {
                             return RegExp(
@@ -96,12 +94,12 @@ class _LoginPageState extends State<LoginPage> {
                             });
                           },
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 15),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Theme.of(context).primaryColor,
+                                backgroundColor: Theme.of(context).primaryColor,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
@@ -155,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
           await HelperFunctions.saveUserEmailSF(email);
           await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
 
+          // ignore: use_build_context_synchronously
           nextScreenReplace(context, const HomePage());
         } else {
           showSnackbar(context, Colors.red, value);

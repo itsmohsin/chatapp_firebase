@@ -7,7 +7,7 @@ class DatabaseService {
   // reference for our userdata
   final CollectionReference userCollection =
       FirebaseFirestore.instance.collection("users");
-  final CollectionReference groupCOllocation =
+  final CollectionReference groupCollocation =
       FirebaseFirestore.instance.collection("groups");
 
   // saving the userdata
@@ -26,5 +26,33 @@ class DatabaseService {
     QuerySnapshot snapshot =
         await userCollection.where("email", isEqualTo: email).get();
     return snapshot;
+  }
+
+//get user groups
+  getUserGroups() async {
+    return userCollection.doc(uid).snapshots();
+  }
+
+  //creating a group
+  Future createGroup(String userName, String id, String groupName) async {
+    DocumentReference documentReference = await groupCollocation.add({
+      "groupName": groupName,
+      "groupIcon": "",
+      "admin": "${id}_$userName",
+      "members": [],
+      "groupId": "",
+      "recentMessage": "",
+      "recentMessageSender": "",
+    });
+    // update the members
+    await documentReference.update({
+      "members": FieldValue.arrayUnion(["${uid}_$userName"]),
+      "groupId": documentReference.id,
+    });
+
+    DocumentReference userDocumentReference = userCollection.doc(uid);
+    return await userDocumentReference.update({
+      "groups": FieldValue.arrayUnion(["${documentReference.id}_$groupName"])
+    });
   }
 }
