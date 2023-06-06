@@ -4,14 +4,14 @@ class DatabaseService {
   final String? uid;
   DatabaseService({this.uid});
 
-  //updating the userdata
+  // reference for our userdata
   final CollectionReference userCollection =
       FirebaseFirestore.instance.collection("users");
   final CollectionReference groupCOllocation =
       FirebaseFirestore.instance.collection("groups");
 
-  // updating the userdata
-  Future updateUserData(String fullname, String email) async {
+  // saving the userdata
+  Future savingUserData(String fullname, String email) async {
     return await userCollection.doc(uid).set({
       "fullName": fullname,
       "email": email,
@@ -19,5 +19,12 @@ class DatabaseService {
       "profilePic": "",
       "uid": uid,
     });
+  }
+
+  // getting user data
+  Future gettingUserData(String email) async {
+    QuerySnapshot snapshot =
+        await userCollection.where("email", isEqualTo: email).get();
+    return snapshot;
   }
 }
