@@ -1,7 +1,6 @@
+import "package:chatapp_firebase/pages/chat_page.dart";
 import "package:chatapp_firebase/widgets/widgets.dart";
 import "package:flutter/material.dart";
-
-import "../pages/chat_page.dart";
 
 class GroupTile extends StatefulWidget {
   final String groupId;

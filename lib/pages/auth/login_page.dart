@@ -1,13 +1,13 @@
+import 'package:chatapp_firebase/helper/helper_function.dart';
 import 'package:chatapp_firebase/pages/auth/register_page.dart';
+import 'package:chatapp_firebase/pages/home_page.dart';
 import 'package:chatapp_firebase/service/auth_service.dart';
+import 'package:chatapp_firebase/service/database_service.dart';
+import 'package:chatapp_firebase/widgets/widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../helper/helper_function.dart';
-import '../../service/database_service.dart';
-import '../../widgets/widgets.dart';
-import '../home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

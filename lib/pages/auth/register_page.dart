@@ -1,10 +1,10 @@
 import 'package:chatapp_firebase/helper/helper_function.dart';
+import 'package:chatapp_firebase/pages/auth/login_page.dart';
 import 'package:chatapp_firebase/pages/home_page.dart';
+import 'package:chatapp_firebase/service/auth_service.dart';
+import 'package:chatapp_firebase/widgets/widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../service/auth_service.dart';
-import '../../widgets/widgets.dart';
-import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -53,13 +53,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           decoration: textInputDecoration.copyWith(
                               labelText: "Full Name",
                               prefixIcon: Icon(
-                                Icons.email,
+                                Icons.person,
                                 color: Theme.of(context).primaryColor,
                               )),
                           onChanged: (val) {
                             setState(() {
                               fullName = val;
-                              print(val);
                             });
                           },
                           // Check the validation status
@@ -76,13 +75,12 @@ class _RegisterPageState extends State<RegisterPage> {
                           decoration: textInputDecoration.copyWith(
                               labelText: "Email",
                               prefixIcon: Icon(
-                                Icons.person,
+                                Icons.email,
                                 color: Theme.of(context).primaryColor,
                               )),
                           onChanged: (val) {
                             setState(() {
                               email = val;
-                              print(val);
                             });
                           },
 
@@ -122,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           width: double.infinity,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Theme.of(context).primaryColor,
+                                backgroundColor: Theme.of(context).primaryColor,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(30))),
@@ -170,8 +168,8 @@ class _RegisterPageState extends State<RegisterPage> {
         if (value == true) {
           //saving the shared preference state
           await HelperFunctions.saveUserLoggedInStatus(true);
-          await HelperFunctions.saveUserEmailSF(email);
           await HelperFunctions.saveUserNameSF(fullName);
+          await HelperFunctions.saveUserEmailSF(email);
           nextScreenReplace(context, const HomePage());
         } else {
           showSnackbar(context, Colors.red, value);
