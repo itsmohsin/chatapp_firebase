@@ -1,16 +1,16 @@
 # chatapp_firebase
+A Flutter chatApplication using firebase.
 
-A new Flutter project.
+<img src="/screenShots/2register.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/1login.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/3home.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/4sideBar.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/5profile.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/6createGroup.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/7chatScreen.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/8searchPage.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/9groupInfo.png" width=23.6% height=27.8%>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="/screenShots/10logout.png" width=23.6% height=27.8%>
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
