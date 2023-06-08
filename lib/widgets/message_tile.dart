@@ -9,7 +9,8 @@ class MessageTile extends StatefulWidget {
       {Key? key,
       required this.message,
       required this.sender,
-      required this.sentByMe});
+      required this.sentByMe})
+      : super(key: key);
 
   @override
   State<MessageTile> createState() => _MessageTileState();
